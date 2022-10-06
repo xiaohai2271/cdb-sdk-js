@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../sdk/dist/hcdb-1.0.0.min.js"></script>
+    <script src="./initialize.js"></script>
+</head>
+<body>
+<h1>HCDB详情</h1>
+<pre id="hcdb" style="height: 300px;overflow: auto"></pre>
+<h1>查询结果</h1>
+<pre id="result" style="height: 300px;overflow: auto"></pre>
+<h3>错误信息</h3>
+<pre id="err"></pre>
+<script>
+    const query = HCDB.table.del('test1')
+    query.where([{column: 'rowId', op: '=', value: 2}])
+    query.exec()
+        .then(res => {
+            console.log(res)
+            document.getElementById("result").innerText = JSON.stringify(res, null, 2)
+            // console.error(err)
+        }).catch(e => {
+            document.getElementById('err').innerText = JSON.stringify(e)
+        }
+    )
+    // 或
+    // HCDB.table.query('category').exec((res, err) => {
+    //     console.log(res)
+    //     err && console.error(err)
+    // })
+</script>
+</body>
+</html>
