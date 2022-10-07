@@ -1,5 +1,5 @@
 import { AppConfig } from '../types';
-import HCDB from '../index';
+import Hmc from '../index';
 import { getAppType } from './utils';
 import { version, host } from '../data/constant';
 
@@ -23,7 +23,7 @@ export const getDefaultConfig = (): AppConfig => {
  * @return {Object}
  */
 export const getConfig = () => {
-  let instance = HCDB;
+  let instance = Hmc;
   if (!instance) {
     return getDefaultConfig();
   }

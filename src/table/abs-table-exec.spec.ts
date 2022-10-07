@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test } from '@jest/globals';
-import HCDB from '../index';
+import Hmc from '../index';
 import { TableQuery } from './types';
 import {WhereCondition} from "../model/command.type";
 import {CommandReqModel} from "../model";
@@ -10,7 +10,7 @@ let tableInfo: CommandReqModel;
 describe('AbstractTableExec', () => {
 
   beforeEach(() => {
-    query = HCDB.table.query('test');
+    query = Hmc.table.query('test');
     // @ts-ignore
     tableInfo = query.tableInfo;
   });

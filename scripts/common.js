@@ -6,7 +6,7 @@ let shell = require("shelljs");
 
 let constantMapping = {
     version: require('../package.json').version,
-    host: 'https://cdb.menghuan.life',
+    host: 'https://cdb.menghuan.life/api',
     host_debug: 'http://127.0.0.1:8910/api'
 };
 

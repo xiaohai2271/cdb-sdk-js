@@ -1,2 +1,2 @@
-// HCDB.initialize('182d0c2b-da80-46b2-825b-645f145eaf19', '374e776b-3ea5-4104-baff-f23913702975')
-HCDB.initialize('a85d08920d4c471e90a8f527612d993e', '2f550882-50e5-4f97-a2d8-bc3900a64ccb')
+// Hmc.initialize('9c7aa32d966b4290a6aeedb0e37ff1b5', '2838a62f-76ea-425d-bb9c-53af24000705')
+Hmc.initialize('d23ccedac4cb49fb9929b3ad140a8395', 'd9f09952-8b5b-4517-affe-209061cbc9dd')

@@ -12,13 +12,13 @@
 #### 1.1 压缩包引入
 
 ```javascript
-let Hmc = require('/lib/hhmc-x.x.x.min.js');
+let Hmc = require('/lib/hmc-x.x.x.min.js');
 ```
 
 #### 1.2 源码引入（nodejs必须源码引入）
 
 ```javascript
-let Hmc = require('hmc-sdk');
+let Hmc = require('hmc-js-sdk');
 ```
 
 #### 1.3 使用npm
@@ -26,13 +26,13 @@ let Hmc = require('hmc-sdk');
 **1.3.1 安装**
 
 ```shell
-npm install hmc-sdk
+npm install hmc-js-sdk
 ```
 
 **1.3.2 引入**
 
 ```javascript
-import Hmc from "hmc-sdk";
+import Hmc from "hmc-js-sdk";
 ```
 
 **1.3.3 问题**
@@ -40,7 +40,7 @@ import Hmc from "hmc-sdk";
 1. 如果报如下错误信息
 
 ```log
-import Hmc from "hmc-sdk";
+import Hmc from "hmc-js-sdk";
 ^^^^^^
 
 SyntaxError: Cannot use import statement outside a module
@@ -51,7 +51,7 @@ SyntaxError: Cannot use import statement outside a module
 ### 2.示例
 
 ```typescript
-import Hmc from "hmc-sdk";
+import Hmc from "hmc-js-sdk";
 
 console.log(Hmc)
 

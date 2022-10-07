@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "hmc-sdk": "^1.0.1"
+    "hmc-js-sdk": "^1.0.1"
   }
 }

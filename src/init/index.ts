@@ -1,9 +1,9 @@
 import { HmcInstance } from '../types';
 import { getDefaultConfig } from '../util/config';
-import HCDB from '../index';
+import Hmc from '../index';
 
 export const initialize = (secretKey: string, applicationKey: string, securityCode?: string): HmcInstance => {
-  let app = HCDB;
+  let app = Hmc;
   const cfg = getDefaultConfig();
   cfg.request = {
     secretKey,
