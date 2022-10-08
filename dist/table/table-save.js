@@ -62,7 +62,7 @@ var TableSaveImpl = /** @class */ (function (_super) {
      * 是否为新增数据
      */
     TableSaveImpl.prototype.saveMode = function (saveMode) {
-        this.tableInfo.type = 'insert';
+        this.tableInfo.type = saveMode ? 'insert' : 'update';
         return this;
     };
     return TableSaveImpl;

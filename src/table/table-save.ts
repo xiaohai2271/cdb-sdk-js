@@ -48,7 +48,7 @@ export class TableSaveImpl extends AbstractTableExec<TableSave> implements Table
    * 是否为新增数据
    */
   saveMode(saveMode: boolean): TableSave {
-    this.tableInfo.type = 'insert';
+    this.tableInfo.type = saveMode ? 'insert' : 'update';
     return this;
   }
 
