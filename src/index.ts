@@ -1,6 +1,6 @@
 import table from './table';
 import { initialize } from './init';
-import { getDefaultConfig } from './util/config';
+import { getDefaultConfig, setInstance } from './util/config';
 import { HmcInstance } from './types';
 
 const Hmc: HmcInstance = {
@@ -9,6 +9,6 @@ const Hmc: HmcInstance = {
   table,
 };
 
-module.exports = Hmc;
+setInstance(Hmc);
 
 export default Hmc;

@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, test } from '@jest/globals';
 import Hmc from '../index';
 import { TableQuery } from './types';
-import {WhereCondition} from "../model/command.type";
-import {CommandReqModel} from "../model";
+import { WhereCondition } from "../model/command.type";
+import { CommandReqModel } from "../model";
 
 let query: TableQuery;
 let tableInfo: CommandReqModel;

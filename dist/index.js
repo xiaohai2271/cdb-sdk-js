@@ -11,5 +11,6 @@ var Hmc = {
     initialize: init_1.initialize,
     table: table_1["default"]
 };
-module.exports = Hmc;
+(0, config_1.setInstance)(Hmc);
 exports["default"] = Hmc;
+module.exports=Hmc

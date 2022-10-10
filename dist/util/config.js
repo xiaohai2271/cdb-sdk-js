@@ -1,12 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 exports.__esModule = true;
-exports.getConfig = exports.getDefaultConfig = void 0;
-var index_1 = __importDefault(require("../index"));
+exports.getConfig = exports.getInstance = exports.setInstance = exports.getDefaultConfig = void 0;
 var utils_1 = require("./utils");
 var constant_1 = require("../data/constant");
+var _instance;
 var getDefaultConfig = function () {
     return {
         debug: false,
@@ -21,15 +18,20 @@ var getDefaultConfig = function () {
     };
 };
 exports.getDefaultConfig = getDefaultConfig;
+var setInstance = function (instance) {
+    _instance = instance;
+};
+exports.setInstance = setInstance;
+var getInstance = function () { return _instance; };
+exports.getInstance = getInstance;
 /**
  * 获取 SDK 配置信息
  * @return {Object}
  */
 var getConfig = function () {
-    var instance = index_1["default"];
-    if (!instance) {
+    if (!_instance) {
         return (0, exports.getDefaultConfig)();
     }
-    return instance.__config__;
+    return _instance.__config__;
 };
 exports.getConfig = getConfig;

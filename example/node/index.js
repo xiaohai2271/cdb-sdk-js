@@ -1,5 +1,4 @@
-let Hmc = require('hmc-js-sdk');
-// import Hmc from "cdb-sdk";
+import Hmc from "hmc-js-sdk";
 
 // console.log(Hmc)
 //
@@ -20,6 +19,9 @@ let Hmc = require('hmc-js-sdk');
 // 本地
 // Hmc.initialize('d735fe2d-0055-4653-9142-a67b66134660', 'e2517ca9-7080-4a14-9fc2-73cc634d580e')
 // 部署线上
+
+console.log(Hmc);
+
 Hmc.initialize('d23ccedac4cb49fb9929b3ad140a8395', 'd9f09952-8b5b-4517-affe-209061cbc9dd')
 
 let query = Hmc.table.query('category')

@@ -1,7 +1,7 @@
 import { getConfig } from '../util/config';
 import { Method } from 'axios';
-import { getHeader } from './index';
 import { RequestFunction } from '../types';
+import { getHeader } from "../util/request.util";
 
 const config = getConfig();
 

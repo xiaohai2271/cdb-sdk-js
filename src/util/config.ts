@@ -1,8 +1,8 @@
-import { AppConfig } from '../types';
-import Hmc from '../index';
+import { AppConfig, HmcInstance } from '../types';
 import { getAppType } from './utils';
 import { version, host } from '../data/constant';
 
+let _instance: HmcInstance;
 
 export const getDefaultConfig = (): AppConfig => {
   return {
@@ -17,15 +17,18 @@ export const getDefaultConfig = (): AppConfig => {
     sdkVersion: version,
   };
 };
+export const setInstance = (instance: HmcInstance) => {
+  _instance = instance;
+}
+export const getInstance = () => _instance;
 
 /**
  * 获取 SDK 配置信息
  * @return {Object}
  */
 export const getConfig = () => {
-  let instance = Hmc;
-  if (!instance) {
+  if (!_instance) {
     return getDefaultConfig();
   }
-  return instance.__config__;
+  return _instance.__config__;
 };

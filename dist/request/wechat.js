@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var config_1 = require("../util/config");
-var index_1 = require("./index");
+var request_util_1 = require("../util/request.util");
 var config = (0, config_1.getConfig)();
 var request = function (path, method, params) {
     if (method === void 0) { method = 'get'; }
@@ -13,7 +13,7 @@ var request = function (path, method, params) {
             url: config.host + path,
             method: method,
             data: params,
-            header: (0, index_1.getHeader)(path, method, params),
+            header: (0, request_util_1.getHeader)(path, method, params),
             success: function (res) {
                 if ((res.data.code && res.data.error) || res.data.error) {
                     reject(res.data);
