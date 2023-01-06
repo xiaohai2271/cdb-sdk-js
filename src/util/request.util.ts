@@ -4,19 +4,20 @@ import { getAppType, getTypeString, randomString } from "./utils";
 import CryptoJS from 'crypto-js';
 export const httpSign = (
   httpPath: string,
-  httpData: object,
+  httpData: any,
   timeStamp: number | string,
   secretKey: string,
   sdkVersion: string,
   randomStr: string,
 ): string => {
-  return CryptoJS.MD5(httpPath + timeStamp + secretKey + randomStr + JSON.stringify(httpData) + sdkVersion).toString();
+  return CryptoJS.MD5(httpPath + timeStamp + secretKey + randomStr + httpData + sdkVersion).toString();
 };
 
-export const getHeader = (path: string, method: Method, params: Object) => {
+export const getHeader = (path: string, method: Method, params: any) => {
   const config = getConfig();
   const t = Math.round(new Date().getTime() / 1000);
-  let data = (method === 'get' || method === 'delete') ? {} : params;
+  const queryString = Object.keys(params||{}).map(key => `${key}=${params[key]}` ).join("&");
+  let data = (method === 'get' || method === 'delete') ? queryString : JSON.stringify(params);
   const rand = randomString();
   const sign = httpSign(path, data, t, config.request?.secretKey || '', config.sdkVersion, rand);
   let header = {
